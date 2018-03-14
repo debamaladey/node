@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Node Test</title>
+    <meta charset = "utf-8">
+  </head>
+  <body>
+  <a href="/contact-add">Add</a>
+  	<table border="1" width="50%">
+		  <tr>
+        <td><b>Name</b></td>
+        <td><b>Address</b></td>
+        <td><b>Action</b></td>
+      </tr>
+    <% lists.forEach(function(list,index) { %>
+        <tr>
+        	<td><%= list.name %></td> 
+          <td><%= list.address %></td>
+          <td><a href="/contact-edit/<%= list.id %>">Edit</a> / <a href="/contact-delete/<%= list.id %>">Delete</a></td>
+        </tr>
+    <% }); %>
+	  </table>
+  </body>
+</html>
+

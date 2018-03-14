@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../templates/head.ejs%>
+  </head>
+  <body>
+  <a href="/home-add">Add</a>
+  	<table border="1" width="50%">
+		  <tr>
+        <td><b>Name</b></td>
+        <td><b>Address</b></td>
+        <td><b>Action</b></td>
+      </tr>
+    <% lists.forEach(function(list,index) { %>
+        <tr>
+        	<td><%= list.name %></td> 
+          <td><%= list.address %></td>
+          <td><a href="/home-edit/<%= list.id %>">Edit</a> / <a href="/home-delete/<%= list.id %>">Delete</a></td>
+        </tr>
+    <% }); %>
+	  </table>
+    <% include ../templates/pagination.ejs %>
+     
+    <% include ../templates/footer.ejs %>
+  </body>
+</html>
+
